@@ -8,6 +8,31 @@ function sendMessageToMQTTT(topicName,msgText){
         console.log("Can't send");
     }
 }
+function setEndValue(id, value) {
+    var badge = document.getElementById(id);
+    if (value == 1) {
+      badge.classList.remove("badge-secondary");
+      badge.classList.add("badge-success");
+    } else if (value == 0) {
+      badge.classList.remove("badge-success");
+      badge.classList.add("badge-secondary");
+    }
+  
+    var lastUpdate = new Date().getTime(); // время последнего обновления
+  
+    setInterval(function() {
+      var now = new Date().getTime(); // текущее время
+      var diff = now - lastUpdate; // разница в миллисекундах
+      if (diff >= 60000) { // если прошло более минуты, останавливаем обновление
+        badge.innerText = "1 min";
+        clearInterval(intervalId);
+      } else { // обновляем содержимое элемента
+        var seconds = Math.floor((diff % 60000) / 1000); // вычисляем количество секунд
+        badge.innerText = seconds + " sec";
+      }
+    }, 1000); // обновляем каждую секунду
+  
+  }
 $(document).ready(function () {
     //соединиться с mqtt
     MQTTconnect();
