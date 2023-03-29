@@ -24,7 +24,7 @@ function setEndValue(id, value) {
       var now = new Date().getTime(); // текущее время
       var diff = now - lastUpdate; // разница в миллисекундах
       if (diff >= 60000) { // если прошло более минуты, останавливаем обновление
-        badge.innerText = "1 min";
+        badge.innerText = ">1 min";
         clearInterval(intervalId);
       } else { // обновляем содержимое элемента
         var seconds = Math.floor((diff % 60000) / 1000); // вычисляем количество секунд
