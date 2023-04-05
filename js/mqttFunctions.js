@@ -1,7 +1,7 @@
 /* mqtt параметры */
 var mqtt;
 var reconnectTimeout = 2000;
-var host = "192.168.0.107"; //change this
+var host = "10.0.10.111"; //change this
 var port = 9001;
 var flag_connected = 0;
 /* mqtt параметры КОНЕЦ */
