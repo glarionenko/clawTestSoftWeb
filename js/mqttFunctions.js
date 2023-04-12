@@ -25,22 +25,22 @@ function onMessageArrived(msg) {
   console.log("Topic: " + topic);
     if (topic === "claw/info2/left_end") {
       console.log("end detect")
-        //setEndValue("leftEnd", message);
+        setEndValue("leftEnd", message);
       } else if (topic === "claw/info2/right_end") {
         console.log("end detect")
-       //setEndValue("rightEnd", message);
+       setEndValue("rightEnd", message);
       } else if (topic === "claw/info2/up_end") {
         console.log("end detect")
        // setEndValue("upEnd", message);
       } else if (topic === "claw/info2/down_end") {
         console.log("end detect")
-        //setEndValue("downEnd", message);
+        setEndValue("downEnd", message);
       } else if (topic === "claw/info2/forward_end") {
         console.log("end detect")
-        //setEndValue("forwardEnd", message);
+        setEndValue("forwardEnd", message);
       } else if (topic === "claw/info2/backward_end") {
         console.log("end detect")
-        //setEndValue("backwardEnd", message);
+        setEndValue("backwardEnd", message);
       }
       
 }
