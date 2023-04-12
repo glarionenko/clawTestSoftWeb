@@ -18,7 +18,8 @@ function onFailure(message) {
 }
 //функция получения сообщения mqtt
 function onMessageArrived(msg) {
-    //console.log("Message recieved!");
+    console.log("Message recieved!");
+    /*
     if (topic === "claw/info2/left_end") {
       console.log("end detect")
         setEndValue("leftEnd", message);
@@ -38,6 +39,7 @@ function onMessageArrived(msg) {
         console.log("end detect")
         setEndValue("backwardEnd", message);
       }
+      */
 }
 //функция получения сообщения mqtt КОНЕЦ
 function onConnect() {
