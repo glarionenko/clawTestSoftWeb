@@ -8,6 +8,8 @@ function sendMessageToMQTTT(topicName,msgText){
         console.log("Can't send");
     }
 }
+var intervalIDs =[0,0,0,0,0,0,0,0,0,0,0,0];
+var elementIDs =["leftEnd","rightEnd","upEnd","downEnd","forwardEnd","backwardEnd"];
 function setEndValue(id, value) {
     var badge = document.getElementById(id);
     if (value == 1) {
@@ -20,12 +22,14 @@ function setEndValue(id, value) {
   
     var lastUpdate = new Date().getTime(); // время последнего обновления
   
-    setInterval(function() {
+    var myIntervalID = setInterval(function() {
       var now = new Date().getTime(); // текущее время
       var diff = now - lastUpdate; // разница в миллисекундах
       if (diff >= 60000) { // если прошло более минуты, останавливаем обновление
-        badge.innerText = ">1 min";
-        clearInterval(intervalId);
+        //badge.innerText = ">1 min";
+        var seconds = Math.floor((diff % 60000) / 1000); // вычисляем количество секунд
+        badge.innerText = seconds + " sec";
+        clearInterval(myIntervalID);
       } else { // обновляем содержимое элемента
         var seconds = Math.floor((diff % 60000) / 1000); // вычисляем количество секунд
         badge.innerText = seconds + " sec";
