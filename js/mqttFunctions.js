@@ -23,22 +23,22 @@ function onMessageArrived(msg) {
     var topic = msg.destinationName;
     console.log("Message received: " + message);
   console.log("Topic: " + topic);
-    if (topic === "claw/info2/left_end") {
+    if (topic === "claw/info/left_end") {
       console.log("end detect")
         setEndValue("leftEnd", message);
-      } else if (topic === "claw/info2/right_end") {
+      } else if (topic === "claw/info/right_end") {
         console.log("end detect")
        setEndValue("rightEnd", message);
-      } else if (topic === "claw/info2/up_end") {
+      } else if (topic === "claw/info/up_end") {
         console.log("end detect")
        // setEndValue("upEnd", message);
-      } else if (topic === "claw/info2/down_end") {
+      } else if (topic === "claw/info/down_end") {
         console.log("end detect")
         setEndValue("downEnd", message);
-      } else if (topic === "claw/info2/forward_end") {
+      } else if (topic === "claw/info/forward_end") {
         console.log("end detect")
         setEndValue("forwardEnd", message);
-      } else if (topic === "claw/info2/backward_end") {
+      } else if (topic === "claw/info/backward_end") {
         console.log("end detect")
         setEndValue("backwardEnd", message);
       }
@@ -48,7 +48,7 @@ function onMessageArrived(msg) {
 function onConnect() {
     console.log("Connected");
     //подписываемся на
-    mqtt.subscribe("claw/info2/#");
+    mqtt.subscribe("claw/info/#");
     flag_connected = 1;
 }
 
