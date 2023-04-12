@@ -19,7 +19,7 @@ function onFailure(message) {
 //функция получения сообщения mqtt
 function onMessageArrived(msg) {
     console.log("Message recieved!");
-    
+    console.log(msg.topic);
     if (msg.topic === "claw/info2/left_end") {
       console.log("end detect")
         //setEndValue("leftEnd", message);
