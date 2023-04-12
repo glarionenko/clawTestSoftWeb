@@ -21,8 +21,8 @@ function onMessageArrived(msg) {
     console.log("Message recieved!");
     var message = msg.payloadString;
     var topic = msg.destinationName;
-    console.log("Message received: " + message.payloadString);
-  console.log("Topic: " + message.destinationName);
+    console.log("Message received: " + message);
+  console.log("Topic: " + topic);
     if (topic === "claw/info2/left_end") {
       console.log("end detect")
         //setEndValue("leftEnd", message);
