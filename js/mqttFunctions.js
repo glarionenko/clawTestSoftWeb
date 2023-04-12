@@ -19,17 +19,23 @@ function onFailure(message) {
 //функция получения сообщения mqtt
 function onMessageArrived(msg) {
     //console.log("Message recieved!");
-    if (topic === "claw/info/left-end") {
+    if (topic === "claw/info/left_end") {
+      console.log("end detect")
         setEndValue("leftEnd", message);
-      } else if (topic === "claw/info/right-end") {
+      } else if (topic === "claw/info/right_end") {
+        console.log("end detect")
         setEndValue("rightEnd", message);
-      } else if (topic === "claw/info/up-end") {
+      } else if (topic === "claw/info/up_end") {
+        console.log("end detect")
         setEndValue("upEnd", message);
-      } else if (topic === "claw/info/down-end") {
+      } else if (topic === "claw/info/down_end") {
+        console.log("end detect")
         setEndValue("downEnd", message);
-      } else if (topic === "claw/info/forward-end") {
+      } else if (topic === "claw/info/forward_end") {
+        console.log("end detect")
         setEndValue("forwardEnd", message);
-      } else if (topic === "claw/info/backward-end") {
+      } else if (topic === "claw/info/backward_end") {
+        console.log("end detect")
         setEndValue("backwardEnd", message);
       }
 }
